@@ -23,9 +23,9 @@
 
 typedef struct 	s_complex
 {
-	double		real;
-	double		image;
-}				t_complex;
+double		real;
+double		image;
+}		t_complex;
 
 class Computor
 {
