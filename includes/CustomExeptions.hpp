@@ -23,7 +23,7 @@ public:
     CustomExeption();
     CustomExeption(std::string Error);
     CustomExeption(const CustomExeption& rhs);
-	CustomExeption & operator = (CustomExeption const & rhs);
+    CustomExeption & operator = (CustomExeption const & rhs);
     virtual ~CustomExeption();
 
     virtual const char* what() const throw();
