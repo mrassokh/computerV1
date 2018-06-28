@@ -30,8 +30,8 @@ typedef struct 	s_complex
 class Computor
 {
 public:
-	static	Computor								&Instance();
-	void 											procesing(int argc, char** argv);
+	static	Computor					&Instance();
+	void 							procesing(int argc, char** argv);
 
 private:
 	Computor();
@@ -39,27 +39,27 @@ private:
 	Computor & operator = (Computor const & rhs) = delete;
 	~Computor();
 
-	void 											fillLeftSide(std::shared_ptr<std::vector<double>> leftCoeff,
-																	std::string const & leftSide);
-	void 											fillRightSide(std::shared_ptr<std::vector<double>> rightCoeff,
-																	std::string const & rightSide);
-	void 											fillReducedForm(std::shared_ptr<std::vector<double>> leftCoeff,
-																	std::shared_ptr<std::vector<double>> rightCoeff,
-																	std::shared_ptr<std::vector<double>> reducedFormCoeff);
-	void 											printReducedForm(std::shared_ptr<std::vector<double>> reducedFormCoeff);
+	void 							fillLeftSide(std::shared_ptr<std::vector<double>> leftCoeff,
+											std::string const & leftSide);
+	void 							fillRightSide(std::shared_ptr<std::vector<double>> rightCoeff,
+											std::string const & rightSide);
+	void 							fillReducedForm(std::shared_ptr<std::vector<double>> leftCoeff,
+											std::shared_ptr<std::vector<double>> rightCoeff,
+											std::shared_ptr<std::vector<double>> reducedFormCoeff);
+	void 							printReducedForm(std::shared_ptr<std::vector<double>> reducedFormCoeff);
 
-	void 											pushToken(std::shared_ptr<std::vector<double>> coeff,
-																	std::string & token, char sign);
-	void 											pushTokenToright(std::shared_ptr<std::vector<double>> coeff,
-																	std::string & token, char sign);
+	void 							pushToken(std::shared_ptr<std::vector<double>> coeff,
+											std::string & token, char sign);
+	void 							pushTokenToright(std::shared_ptr<std::vector<double>> coeff,
+											std::string & token, char sign);
 
-	int 											findDegree(std::string const & token);
-	void 											trim(std::string& s);
-	double											findSquareRoot(double const & square);
+	int 							findDegree(std::string const & token);
+	void 							trim(std::string& s);
+	double							findSquareRoot(double const & square);
 
-	void 											solveZeroDegree(std::shared_ptr<std::vector<double>> reducedFormCoeff);
-	void 											solveFirstDegree(std::shared_ptr<std::vector<double>> reducedFormCoeff);
-	void 											solveSecondDegree(std::shared_ptr<std::vector<double>> reducedFormCoeff);
+	void 							solveZeroDegree(std::shared_ptr<std::vector<double>> reducedFormCoeff);
+	void 							solveFirstDegree(std::shared_ptr<std::vector<double>> reducedFormCoeff);
+	void 							solveSecondDegree(std::shared_ptr<std::vector<double>> reducedFormCoeff);
 
 
 
@@ -68,11 +68,11 @@ private:
 	std::shared_ptr<std::vector<double>> 			m_leftSide;
 	std::shared_ptr<std::vector<double>> 			m_rightSide;
 	std::shared_ptr<std::vector<double>> 			m_reducedForm;
-	t_complex										m_firstRoot;
-	t_complex										m_secondRoot;
-	double											m_discriminant;
-	int												m_counter;
-	std::string										m_reducedFormStr;
+	t_complex						m_firstRoot;
+	t_complex						m_secondRoot;
+	double							m_discriminant;
+	int							m_counter;
+	std::string						m_reducedFormStr;
 };
 
 #endif
